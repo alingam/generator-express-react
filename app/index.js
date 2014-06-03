@@ -45,13 +45,6 @@ ExpressReactGenerator.prototype.askFor = function () {
         name: 'mvc',
         message: 'Do you want an mvc express app',
         default:  false
-    },
-    {
-        type: 'list',
-        name: 'viewEngine',
-        message: 'Select view engine you would like to use',
-        default: 'jade',
-        choices: ['jade', 'handlebars', 'ejs']
     }
     ];
 
@@ -60,7 +53,6 @@ ExpressReactGenerator.prototype.askFor = function () {
         this.expressVersion = answers.expressVersion;
         this.cssExt = 'less';
         this.buildToolLanguage='js';
-        this.viewEngine = answers.viewEngine === 'handlebars' ? 'hbs' : answers.viewEngine;
         this.buildTool = 'grunt';
         cb();
     }).bind(this);
@@ -83,8 +75,8 @@ ExpressReactGenerator.prototype.basicSetup = function () {
 
 ExpressReactGenerator.prototype.viewsSetup = function () {
     this.sourceRoot(path.join(__dirname, 'templates/views'));
-    ['layout', 'index', '404'].forEach(function (file) {
-        this.template(file + '.html', 'views/' + file + '.' + this.viewEngine);
+    ['grid'].forEach(function (file) {
+        this.template(file + '.html', 'views/' + file + '.' + 'html');
     }, this);
 };
 
