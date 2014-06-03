@@ -99,6 +99,11 @@ ExpressReactGenerator.prototype.projectfiles = function () {
         this.copy(file === '.gitignore' ? 'gitignore' : file, file);
     }, this);
 };
+
+ExpressReactGenerator.prototype.writePackageJSONFile = function () {
+    this.template('.package.json', 'package.json');
+};
+
 ExpressReactGenerator.prototype.writeBuildFile = function () {
     var buildFile = 'Gruntfile.'+ this.buildToolLanguage;
 
@@ -109,8 +114,6 @@ ExpressReactGenerator.prototype.writeBuildFile = function () {
     }
 };
 
-ExpressReactGenerator.prototype.writePackageJSONFile = function () {
-    this.template('.package.json', 'package.json');
-};
+
 
 module.exports = ExpressReactGenerator;
