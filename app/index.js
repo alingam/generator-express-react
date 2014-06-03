@@ -53,6 +53,7 @@ ExpressReactGenerator.prototype.askFor = function () {
         this.expressVersion = answers.expressVersion;
         this.cssExt = 'less';
         this.buildToolLanguage='js';
+        this.cssPreprocessor='less';
         this.buildTool = 'grunt';
         cb();
     }).bind(this);
@@ -71,13 +72,6 @@ ExpressReactGenerator.prototype.basicSetup = function () {
     this.template('styles.css', 'public/' + this.cssPreprocessor + '/styles.' + this.cssExt);
     this.copy('main.js', 'public/js/main.js');
     this.copy('gridComponent.js', 'public/components/gridComponent.js');
-};
-
-ExpressReactGenerator.prototype.viewsSetup = function () {
-    this.sourceRoot(path.join(__dirname, 'templates/views'));
-    ['grid'].forEach(function (file) {
-        this.template(file + '.html', 'views/' + file + '.' + 'html');
-    }, this);
 };
 
 ExpressReactGenerator.prototype.setupApp = function () {
