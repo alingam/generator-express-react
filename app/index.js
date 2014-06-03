@@ -41,13 +41,6 @@ ExpressReactGenerator.prototype.askFor = function () {
       choices: ['3.x', '4.x']
     },
     {
-        type: 'list',
-        name: 'cssPreprocessor',
-        message: 'less is the css preprocessor',
-        default: 'less'
-
-    },
-    {
         type: 'confirm',
         name: 'mvc',
         message: 'Do you want an mvc express app',
@@ -59,18 +52,6 @@ ExpressReactGenerator.prototype.askFor = function () {
         message: 'Select view engine you would like to use',
         default: 'jade',
         choices: ['jade', 'handlebars', 'ejs']
-    },
-    {
-        type: 'list',
-        name: 'buildTool',
-        message: 'Grunt is the build tool',
-        default: 'grunt'
-    },
-    {
-        type: 'list',
-        name: 'buildToolLanguage',
-        message: 'Javascript is the build language',
-        default: 'javascript'
     }
     ];
 
