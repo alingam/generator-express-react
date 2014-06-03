@@ -9,10 +9,10 @@
     "static-favicon": "~1.0.1",
     "method-override": "~1.0.0",
     "errorhandler": "~1.0.0",<% } else { %>
-    "express": "~3.4.8",<% } if (viewEngine === 'jade') { %>
+    "express": "~3.4.8",<% } %>
     "jade": "~1.1.5"
   },
-  "devDependencies": {<%  if (buildTool === 'grunt') %>
+  "devDependencies": {
     "grunt": "~0.4.4",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-watch": "~0.6.1",
