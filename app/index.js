@@ -58,11 +58,10 @@ ExpressReactGenerator.prototype.askFor = function () {
     var answersCallback = (function (answers) {
         this.options.mvc = answers.mvc;
         this.expressVersion = answers.expressVersion;
-        this.cssExt = answers.cssPreprocessor;
-        this.buildToolLanguage='js'
-        this.expressVersion = answers.expressVersion;
+        this.cssExt = 'less';
+        this.buildToolLanguage='js';
         this.viewEngine = answers.viewEngine === 'handlebars' ? 'hbs' : answers.viewEngine;
-        this.buildTool = answers.buildTool;
+        this.buildTool = 'grunt';
         cb();
     }).bind(this);
     this.prompt(prompts, answersCallback);
