@@ -96,6 +96,6 @@ var CommentList = React.createClass({
 console.log("hello");
 
 React.renderComponent(
-    <Products url="/grid/products" pollInterval={2000}/>,
+    <Products url="/products" pollInterval={2000}/>,
     document.getElementById('content')
 );
