@@ -54,6 +54,7 @@ ExpressReactGenerator.prototype.askFor = function () {
         this.cssExt = 'less';
         this.buildToolLanguage='js';
         this.cssPreprocessor='less';
+        this.viewEngine = 'jade';
         this.buildTool = 'grunt';
         cb();
     }).bind(this);
