@@ -42,8 +42,6 @@ if (app.get('env') === 'development') {
   app.use(errorHandler());
 }
 
-app.get('/', routes.index);
-app.get('/products', routes.getProducts);
 
 app.listen(app.get('port'), function () {
   console.log('Express server listening on port ' + app.get('port'));
