@@ -4,8 +4,7 @@
 
 var express  = require('express'),
     path     = require('path'),
-    mongoose = require('mongoose'),<% if (viewEngine === 'hbs') { %>
-    hbs      = require('express-hbs'),<% } %>
+    mongoose = require('mongoose'),
     config   = require('./config'),
     routes   = require('./routes');
 
@@ -17,28 +16,10 @@ mongoose.connection.on('error', function () {
 
 var app = express();
 
-<% if (viewEngine === 'hbs') { %>/**
- * A simple if condtional helper for handlebars
- *
- * Usage:
- *   {{#ifvalue env value='development'}}
- *     do something marvellous
- *   {{/ifvalue}}
- * For more information, check out this gist: https://gist.github.com/pheuter/3515945
- */
-hbs.registerHelper('ifvalue', function (conditional, options) {
-  if (options.hash.value === conditional) {
-    return options.fn(this);
-  } else {
-    return options.inverse(this);
-  }
-});<% } %>
-
 /**
  * Express configuration.
  */
-app.set('port', config.server.port);<% if (viewEngine === 'hbs') { %>
-app.engine('hbs', hbs.express3());<% } %>
+app.set('port', config.server.port);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', '<%= viewEngine %>');
 app.use(express.compress());
@@ -59,7 +40,8 @@ if (app.get('env') === 'development') {
   app.use(express.errorHandler());
 }
 
-routes(app);
+app.get('/', routes.index);
+app.get('/products', routes.getProducts);
 
 app.listen(app.get('port'), function () {
   console.log('Express server listening on port ' + app.get('port'));
