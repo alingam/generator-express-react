@@ -90,10 +90,6 @@ ExpressReactGenerator.prototype.changeDir = function () {
     this.sourceRoot(path.join(__dirname, 'templates', 'common'));
 };
 
-ExpressReactGenerator.prototype.writePackageJSONFile = function () {
-    this.template('.package.json', 'package.json');
-};
-
 ExpressReactGenerator.prototype.writeBowerJSONFile = function () {
     this.template('.bower.json', 'bower.json');
 };
@@ -113,5 +109,8 @@ ExpressReactGenerator.prototype.writeBuildFile = function () {
     }
 };
 
+ExpressReactGenerator.prototype.writePackageJSONFile = function () {
+    this.template('.package.json', 'package.json');
+};
 
 module.exports = ExpressReactGenerator;
