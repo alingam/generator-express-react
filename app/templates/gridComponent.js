@@ -1,18 +1,12 @@
-/** @jsx React.DOM */
+//React Component
 
-// The above declaration must remain intact at the top of the script.
-var converter = new Showdown.converter();
-
-var Comment = React.createClass({
+var SingleProduct = React.createClass({
     render: function() {
-        console.log("........inside ?????? render.........")
-        var rawMarkup = converter.makeHtml(this.props.children.toString());
         return (
             <tr>
                 <td>{this.props.product}</td>
                 <td>{this.props.about}</td>
                 <td>{this.props.quantity}</td>
-                <span dangerouslySetInnerHTML={{__html: rawMarkup}} />
             </tr>
             );
     }
@@ -44,7 +38,6 @@ var Products = React.createClass({
         //setInterval(this.loadProductsFromServer, this.props.pollInterval);
     },
     render: function() {
-        console.log("........inside products render.........")
         return (
             <div className="container">
                 <div className="panel panel-primary">
@@ -59,20 +52,18 @@ var Products = React.createClass({
                     <div className="panel-body">
                     <input type="text" className="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Products" />
                     </div>
-                    <CommentList data={this.state.data}/>
+                    <ProductList data={this.state.data}/>
                 </div>
             </div>
             );
     }
 });
 
-var CommentList = React.createClass({
+var ProductList = React.createClass({
     render: function() {
-        console.log("........inside comment list render.........")
-        var commentNodes = this.props.data.map(function(comment, index) {
-            //console.log("index = " + index + ", comment: " + comment);
+        var productNodes = this.props.data.map(function(product, index) {
             return (
-                <Comment key={index} about={comment.about} product={comment.product} quantity={comment.quantity}>{comment.product}</Comment>
+                <SingleProduct key={index} about={product.about} product={product.product} quantity={product.quantity}>{product.product}</SingleProduct>
 
                 );
         });
@@ -86,16 +77,15 @@ var CommentList = React.createClass({
                             <th>Quantity</th>
                         </tr>
                     </thead>
-                    {commentNodes}
+                    {productNodes}
                 </table>
             </div>
             );
     }
 });
 
-console.log("hello");
 
-React.renderComponent(
+ReactDOM.render(
     <Products url="/products" pollInterval={2000}/>,
     document.getElementById('content')
 );

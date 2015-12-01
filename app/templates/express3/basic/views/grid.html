@@ -1,22 +1,22 @@
-<!-- template.html -->
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Comments App</title>
-    <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css"/>
-    <!-- your own minifed css -->
-    <!--<link rel="stylesheet" href="/css/main.css"/>-->
-    <!--script src="http://fb.me/react-0.8.0.js"></script>
-    <script src="http://fb.me/JSXTransformer-0.8.0.js"></script-->
-
-    <script src="/vendor/react/react.js"></script>
-    <script src="/vendor/react/JSXTransformer.js"></script>
-
-    <script src="/vendor/jquery/dist/jquery.min.js"></script>
-    <script src="/vendor/showdown/compressed/showdown.js"></script>
-    <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+  <title>React App</title>
+  <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css"/>
+  <!-- your own minifed css -->
+  <!--<link rel="stylesheet" href="/css/main.css"/>-->
 </head>
 <body>
-<div id="content"></div>
-<script type="text/jsx" src="components/gridComponent.js"></script>
+  <div id="content"></div>
+
+  <!--scripts-->
+  <script src="/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- React latest-->
+  <script src="../node_modules/react/dist/react.js"></script>
+  <script src="../node_modules/react-dom/dist/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  <!--your react component-->
+  <script type="text/babel" src="components/gridComponent.js"></script>
 </body>
 </html>

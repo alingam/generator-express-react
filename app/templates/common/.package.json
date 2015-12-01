@@ -10,7 +10,9 @@
     "method-override": "~1.0.0",
     "errorhandler": "~1.0.0",<% } else { %>
     "express": "~3.4.8",<% } %>
-    "jade": "~1.1.5"
+    "jade": "~1.1.5",
+    "react": "^0.14.3",
+    "react-dom": "0.14.3"
   },
   "devDependencies": {
     "grunt": "~0.4.4",
