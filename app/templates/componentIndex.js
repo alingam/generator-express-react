@@ -1,4 +1,8 @@
-//React Component
+'use strict';
+var $ = require('jquery');
+var React = require('react');
+var ReactDOM = require('react-dom');
+
 
 var SingleProduct = React.createClass({
     render: function() {
@@ -25,7 +29,6 @@ var Products = React.createClass({
             }.bind(this),
 
             error: function(xhr, status, err) {
-                console.error(this.props.url, status, err.toString());
             }.bind(this)
 
         });
@@ -64,7 +67,6 @@ var ProductList = React.createClass({
         var productNodes = this.props.data.map(function(product, index) {
             return (
                 <SingleProduct key={index} about={product.about} product={product.product} quantity={product.quantity}>{product.product}</SingleProduct>
-
                 );
         });
         return (
@@ -77,7 +79,9 @@ var ProductList = React.createClass({
                             <th>Quantity</th>
                         </tr>
                     </thead>
-                    {productNodes}
+                    <tbody>
+                       {productNodes}
+                    </tbody>
                 </table>
             </div>
             );

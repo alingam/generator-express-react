@@ -68,11 +68,11 @@ ExpressReactGenerator.prototype.basicSetup = function () {
     this.mkdir('public/img');
     this.mkdir('public/css');
     this.mkdir('public/js');
-    this.mkdir('public/components');
+    this.mkdir('components');
 
     this.template('styles.css', 'public/' + this.cssPreprocessor + '/styles.' + this.cssExt);
     this.copy('main.js', 'public/js/main.js');
-    this.copy('gridComponent.js', 'public/components/gridComponent.js');
+    this.copy('componentIndex.js', 'public/components/index.js');
 };
 
 ExpressReactGenerator.prototype.setupApp = function () {
