@@ -72,7 +72,7 @@ ExpressReactGenerator.prototype.basicSetup = function () {
 
     this.template('styles.css', 'public/' + this.cssPreprocessor + '/styles.' + this.cssExt);
     this.copy('main.js', 'public/js/main.js');
-    this.copy('componentIndex.js', 'public/components/index.js');
+    this.copy('componentIndex.js', 'components/index.js');
 };
 
 ExpressReactGenerator.prototype.setupApp = function () {

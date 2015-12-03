@@ -52,11 +52,6 @@ module.exports = function (grunt) {
         }]
       }
     },
-    'node-inspector': {
-      options: {
-        'save-live-edit': true
-      }
-    },
     watch: {
       all: {
         files: ['public/**/*', 'views/**', '!**/node_modules/**', '!public/vendor/**/*', '!**/*.min.*'],
@@ -82,7 +77,7 @@ module.exports = function (grunt) {
       }
     },
     concurrent: {
-      tasks: ['node-inspector', 'watch'],
+      tasks: ['watch'],
       options: {
         logConcurrentOutput: true
       }
