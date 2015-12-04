@@ -22,8 +22,6 @@ mongoose.connection.on('error', function () {
 
 var app = express();
 
-// Bootstrap routes
-require('./routes/index')(app);
 
 /**
  * Express configuration.
